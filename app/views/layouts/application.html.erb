@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= render 'shared/head' %>
+  </head>
+
+  <body>
+    <div class="min-vh-100 d-flex">
+      <% if user_signed_in? %>
+        <%= render 'shared/sidebar' %>
+
+        <div class="flex-grow-1">
+          <%= render 'shared/navbar' %>
+
+          <main class="container">
+            <%= yield %>
+          </main>
+        </div>
+      <% else %>
+        <main class="container py-4">
+          <%= image_tag 'logo.svg', class: 'd-block mx-auto' %>
+          <%= yield %>
+        </main>
+      <% end %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<% content_for(:title, "#{t('shared.edit')} #{@budget.title}") %>
+
+<p>
+  <%= link_to t('shared.go_back_html'), budgets_path %>
+</p>
+
+<h1><%= content_for(:title) %></h1>
+
+<%= render 'budgets/form' %>

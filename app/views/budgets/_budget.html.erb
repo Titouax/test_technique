@@ -1,0 +1,11 @@
+<div class="d-table-row border-bottom">
+  <div class="d-table-cell p-2">
+    <%= link_to budget.title, edit_budget_path(budget), data: { turbo_frame: '_top' } %>
+  </div>
+  <div class="d-table-cell p-2"><%= l(budget.start_at, format: :long) %></div>
+  <div class="d-table-cell p-2"><%= l(budget.end_at, format: :long) %></div>
+  <div class="d-flex gap-2 p-2">
+    <%= link_to t('shared.edit'), edit_budget_path(budget), class: 'btn btn-primary', data: { turbo_frame: '_top' } %>
+    <%= button_to t('shared.delete'), budget_path(budget), class: 'btn btn-outline-danger', method: :delete, form: { data: { turbo_confirm: t('shared.delete_confirmation') } } %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+en:
+  views:
+    budgets:
+      no_budgets: No budgets yet.
+  activerecord:
+    models:
+      budget: Budgets
+    attributes:
+      budget:
+        title: Title
+        start_at: Start at
+        end_at: End at

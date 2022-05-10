@@ -1,0 +1,17 @@
+<% content_for(:title, Budget.model_name.human) %>
+
+<h1><%= content_for(:title) %></h1>
+
+<%= turbo_stream_from :budgets %>
+
+<div class="border-collapse d-table w-100">
+  <div class="d-table-row border-bottom">
+    <div class="d-table-cell fw-bold p-2"><%= t('activerecord.attributes.budget.title') %></div>
+    <div class="d-table-cell fw-bold p-2"><%= t('activerecord.attributes.budget.start_at') %></div>
+    <div class="d-table-cell fw-bold p-2"><%= t('activerecord.attributes.budget.end_at') %></div>
+  </div>
+
+  <%= turbo_frame_tag :budgets, class: 'd-table-row-group' do %>
+    <%= render partial: 'budgets/budget', collection: @budgets %>
+  <% end %>
+</div>
